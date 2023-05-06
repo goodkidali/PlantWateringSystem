@@ -27,7 +27,7 @@ public class MinorProject {
         device.start();
         device.ensureInitializationIsDone();
 
-        var moistureSensor = device.getPin(A1);// Potentiometer... use getPin, just like you did with the Button in the prvious lab.  But for A0 (or 14)
+        var moistureSensor = device.getPin(A1);
         moistureSensor.setMode(Pin.Mode.ANALOG);
         var pumpPin = device.getPin(D2);
         pumpPin.setMode(Pin.Mode.OUTPUT);
@@ -38,7 +38,7 @@ public class MinorProject {
 
 
         var task = new pumpTask(theOledObject, moistureSensor, pumpPin, 0);
-        new Timer().schedule(task, 0, 1000);// do the timer thing here, just as you did in the previous lab.
+        new Timer().schedule(task, 0, 1000);
 
     }
 }
